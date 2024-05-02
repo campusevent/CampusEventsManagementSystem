@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from campus_app import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -51,4 +53,4 @@ urlpatterns = [
     path('show_feedback_by_userid_eventid/<int:eventId>', views.show_feedback_by_userid_eventid),
     path('show_all_feedbacks_by_userid/', views.show_all_feedbacks_by_userid),
     path('show_feedbacks_organizer/', views.show_feedbacks_organizer),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -13,6 +13,10 @@ from decimal import Decimal
 import random as rd
 # Create your views here.
 
+
+def redirection(request):
+    return redirect('/index')
+
 def index(request):
      return render(request, "homepages/index.html", {})
 

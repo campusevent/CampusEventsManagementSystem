@@ -19,6 +19,7 @@ from campus_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.redirection),
     path('index/', views.index),
     path('login/', views.login),
     path('user_registration/', views.user_registration),
